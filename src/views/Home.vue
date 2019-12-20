@@ -44,6 +44,8 @@
 <script>
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+import url from '@/service.config.js';
+import axios from 'axios';
 export default {
   components: {
     swiper,
@@ -308,7 +310,17 @@ export default {
     };
   },
   created () {
-    console.log("111")
+    let url1 = 'http://www.lengnuanit.com/getList';
+    let url2 = 'http://www.litao.com/getUser';
+    let url3 = 'http://www.karry.com/getData';
+    let url4 = 'http://www.longji.com/getFunction';
+    let url5 = url.getVarietyItem;
+    axios.get(url5).then(res=>{
+      console.log(res);
+      this.verietyItem = res.data;
+    }).then(err=>{
+
+    });
   }
 };
 </script>
